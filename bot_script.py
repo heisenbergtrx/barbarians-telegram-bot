@@ -264,7 +264,9 @@ def main() -> None:
         logger.error(".env dosyasında gerekli değişkenler eksik! Lütfen kontrol edin.")
         return
 
-    updater = Updater(BOT_TOKEN)
+    # KOD DÜZELTMESİ: Updater'ı başlatırken use_context=True parametresi eklendi.
+    # Bu, kütüphanenin modern özelliklerinin doğru çalışması için gereklidir.
+    updater = Updater(BOT_TOKEN, use_context=True)
     dispatcher = updater.dispatcher
 
     # Sohbet yöneticisini (ConversationHandler) oluşturuyoruz
